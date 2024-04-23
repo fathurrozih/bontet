@@ -95,6 +95,12 @@ class UsersTable extends Table
             ->requirePresence('address', 'create')
             ->notEmptyString('address');
 
+        $validator
+            ->scalar('photo')
+            ->maxLength('photo',255)
+            ->requirePresence('photo', 'create')
+            ->allowEmptyString('photo');
+
         return $validator;
     }
 

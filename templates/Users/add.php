@@ -22,6 +22,7 @@ $this->Breadcrumbs->add([
         <?= $this->Form->control('email') ?>
         <?= $this->Form->control('name') ?>
         <?= $this->Form->control('address') ?>
+        <?=$this->Form->control('photo')?>
     </div>
     <div class="card-footer d-flex">
         <div class="ml-auto">

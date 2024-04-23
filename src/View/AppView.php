@@ -28,7 +28,6 @@ use CakeLte\View\CakeLteTrait;
 class AppView extends View
 {
     use CakeLteTrait;
-
     public string $layout = 'CakeLte.default';
     /**
      * Initialization hook method.
@@ -43,5 +42,6 @@ class AppView extends View
     {
         parent::initialize();
         $this->initializeCakeLte();
+        $this->loadHelper('Authentication.Identity');
     }
 }

@@ -70,4 +70,5 @@ $this->Breadcrumbs->add([
         </ul>
     </div>
     <!-- /.card-footer -->
+    <?=$this->Html->image('../upload/'.$user->photo,['width' => '100px'])?>
 </div>

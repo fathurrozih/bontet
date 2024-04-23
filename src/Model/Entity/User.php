@@ -21,6 +21,7 @@ use Cake\ORM\Entity;
  * @property \App\Model\Entity\Like[] $likes
  * @property \App\Model\Entity\Photo[] $photos
  */
+
 class User extends Entity
 {
     /**
@@ -41,7 +42,7 @@ class User extends Entity
         'albums' => true,
         'comments' => true,
         'likes' => true,
-        'photos' => true,
+        'photo' => true,
     ];
 
     /**

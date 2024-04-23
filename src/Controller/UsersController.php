@@ -52,7 +52,9 @@ class UsersController extends AppController
     {
         $user = $this->Users->newEmptyEntity();
         if ($this->request->is('post')) {
+
             $user = $this->Users->patchEntity($user, $this->request->getData());
+
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('The user has been saved.'));
 
@@ -124,6 +126,22 @@ class UsersController extends AppController
             $this->Flash->error(__('Invalid username or password'));
         }
     }
+
+    public function register ()
+    {
+        $User = $this->Users->newEntity();
+        if ($this->request->is('post')){
+            $User = $this->Users->patchEntity($User, $this->request->getData());
+            if ($this->Users->save($User)){
+                $this->Flash->success(__('The User has been saved'));
+
+                return $this->redirect(['action' => 'index']);
+            }
+            $this->Flash->error(__('The User could not be saved.Please try again'));
+        }
+        $this->set(compact('User'));
+    }
+
 
     public function logout()
     {
